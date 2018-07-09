@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class FireBlaster : MonoBehaviour {
 
-    public ParticleSystem blasterParent;
+    public GameObject Projectile;
+    public int SpeedMultiplier;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            ParticleSystem blaster = new ParticleSystem();
-
-            blaster = blasterParent;
+            Fire();
         }
 	}
+
+    void Fire()
+    {
+        GameObject projectileInstance = Instantiate(Projectile, transform.position, transform.rotation);
+        //projectileInstance.transform.Rotate(transform.rotation.);
+        projectileInstance.GetComponent<Rigidbody>().AddRelativeForce(transform.forward * SpeedMultiplier, ForceMode.VelocityChange);
+    }
 }
