@@ -6,6 +6,8 @@ public class FireBlaster : MonoBehaviour {
 
     public GameObject Projectile;
     public int SpeedMultiplier;
+    public bool RapidFire = false;
+    public float CooldownPeriod = 1;
 
     // Use this for initialization
     void Start () {
@@ -19,12 +21,15 @@ public class FireBlaster : MonoBehaviour {
         {
             Fire();
         }
+        if (Input.GetButton("Fire1") && RapidFire)
+        {
+            Fire();
+        }
 	}
 
     void Fire()
     {
         GameObject projectileInstance = Instantiate(Projectile, transform.position, transform.rotation);
-        //projectileInstance.transform.Rotate(transform.rotation.);
         projectileInstance.GetComponent<Rigidbody>().AddRelativeForce(transform.forward * SpeedMultiplier, ForceMode.VelocityChange);
     }
 }
