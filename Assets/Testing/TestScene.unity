@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 2039987963}
   - component: {fileID: 2039987962}
   - component: {fileID: 2039987961}
+  - component: {fileID: 2039987965}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -350,6 +351,14 @@ Transform:
   m_Father: {fileID: 2103869575}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &2039987965
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2039987960}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 2d056ac30ecc9e542b26e06133f23602, type: 2}
 --- !u!1 &2103869574
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,11 +367,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2103869575}
-  - component: {fileID: 2103869576}
   - component: {fileID: 2103869577}
   - component: {fileID: 2103869578}
   - component: {fileID: 2103869579}
   - component: {fileID: 2103869580}
+  - component: {fileID: 2103869576}
   m_Layer: 0
   m_Name: TestFighter
   m_TagString: Player
@@ -397,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 1665436266300092, guid: fd6bf9c848eb6a04291c948a19312cd9, type: 2}
-  SpeedMultiplier: 1000
+  SpeedMultiplier: 0
   RapidFire: 0
   CooldownPeriod: 1
 --- !u!114 &2103869577
